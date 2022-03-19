@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    max-width: 2000px;
+    display: block;
+    margin: auto;
+    min-height: 100vh;
+    background-color: black;
+    font-family: sans-serif;
+}
+
+.navbar{
+    width: 100%;
+    position:fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+    background-color: black;
+}
+
+
+
+
+.nav-elements{
+    list-style: none;
+    display: flex;
+}
+
+.element a{
+    color: white;
+    opacity: 0.5;
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: 10px 30px;
+    line-height: 80px;
+    font-size: 23px;
+    transition: opacity 0.7s;
+}
+
+.element a:hover, .element.active a{
+ opacity: 1;
+}
+
+/* home section */
+
+.home-section{
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    transition: 1s;
+
+}
+
+.hero-heading{
+    color: white;
+    font-size: 40px;
+    text-transform: capitalize;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300px;
+}
+
+
+
+.home-section.active,
+.project-section.active,
+.about-section.active,
+.contact-section.active{
+    position: relative;
+    opacity: 1;
+    z-index: 8;
+
+}
+
+
+
+
+/* project section */
+
+
+.project-section{
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    top: 0;
+    opacity: 0;
+    transition: 1s;
+  position: fixed;
+    margin-top:15rem;
+  
+
+}
+
+.project-header{
+    text-align:center;
+    font-size:60px;
+    color: #bbc3c8; font-family: 'Verdana', sans-serif; font-size: 80px; line-height: 70px; text-indent: 30px; margin: 0;
+    text-transform: capitalize;
+    font-weight: 400;
+    margin-bottom: 100px ;
+    list-style: 40px;
+
+    
+    
+ 
+ 
+}
+
+
+
+.project-container{
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    grid-gap: 100px;
+    margin-left: 3rem;
+    margin-right: 3rem;
+   
+}
+
+@media (max-width:670px){
+
+    
+.project-container{
+    
+    grid-template-columns: repeat(1 , 1fr);
+
+    align-items: center;
+    
+   
+}
+
+}
+.project-card{
+    height: 400px;
+    position: relative;
+}
+
+.project-image{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    transition: 0.5s;
+
+}
+
+.project-content{
+    position: relative;
+    padding: 40px;
+    color: white;
+    transition: 0.5s;
+   
+    opacity: 0;
+}
+
+.project-title{
+    font-size:40px;
+    text-transform:center;
+    text-align: center;
+    font-weight: 250;
+    color: black;
+}
+
+.project-info{
+    margin: 20px;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+
+    
+    
+}
+
+.project-buttons{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap:30px;
+}
+
+.project-button {
+    height: 40px;
+    text-transform: capitalize;
+    font-size:15px;
+    border: none;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.project-button.live{
+    background:none;
+    border: 2px solid #fff;
+}
+
+.project-card:hover .project-image{
+    filter: blur(3px);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
+}
+
+.project-card:hover .project-content{
+    opacity: 1;
+}
+
+
+/* about-section */
+
+.about-section{
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    transition: 1s;
+   margin-top: 10rem;
+    
+}
+
+
+
+
+.about{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+
+ 
+
+  
+}
+.about-image-container{
+ width: fit-content ;
+}
+
+.about-info{
+    color: white;
+    opacity: 0.6;
+    font-size: 25px;
+    line-height: 40px;
+    
+}
+
+.about-image{
+    width: 300px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: opacity 3s;
+    
+}
+.about-image:hover{
+    opacity: 0.5;
+
+}
+
+@media (max-width:670px){
+
+    
+    .about-section{
+        
+        grid-template-columns: repeat(1 , 1fr);
+    
+        align-items: center;
+       
+       
+    }
+
+
+    .about{
+        
+        grid-template-columns: repeat(1 , 1fr);
+    
+        align-items: center;
+        margin-left: 3rem;
+        margin-right: 3rem;
+       
+    }
+    
+    }
+
+
+.download-cv-button{
+
+    bottom: 20px;
+    left: 50%;
+  transform: translateX(-200%);
+
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+}
+
+
+
+
+
+.download-cv-button:hover{
+    background-color: black;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+
+
+/* skills */
+
+.skill-section {
+   display: grid;
+   grid-template-columns: repeat(1,1fr);
+ 
+ 
+}
+
+.heading{
+    text-align:center;
+    font-size:60px;
+    color: #bbc3c8; font-family: 'Verdana', sans-serif; font-size: 80px; line-height: 70px; text-indent: 30px; margin: 0;
+    text-transform: capitalize;
+    font-weight: 400;
+    margin-top: 100px;
+    margin-bottom: 100px ;
+    list-style: 40px;
+}
+
+.skill-info{
+    color: #c9d0d4; font-family: 'Helvetica Neue', sans-serif; font-size: 46px; font-weight: 100; line-height: 50px; letter-spacing: 1px; border-bottom: double #555; 
+    
+    color: #bbc3c8; font-family: 'Verdana', sans-serif; font-size: 20px; line-height: 26px; text-indent: 30px; margin: 0;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+/* experience-education */
+
+.experience-education{
+display: grid;
+grid-template-columns: repeat(1,3fr);
+font-family: 'Helvetica Neue'; 
+line-height: 30px;
+text-align: center;
+
+row-gap: 2rem;
+margin-top: 5rem;
+margin-bottom: 5rem;
+}
+
+.card{
+   
+    color: white;
+ 
+    font-size: 20px;
+  
+    border: 1px transparent;
+    
+}
+
+
+
+
+
+
+/* contact-section */
+
+
+.contact-section{
+    position: absolute;
+    top: 0;
+    transition: 1s;
+
+    height: 100vh;
+    opacity: 0;
+    
+}
+
+@media (max-width:670px){
+
+    
+    .download-cv-button{
+
+      transform: translateX(100%);
+    
+       
+    }
+    .card{
+        margin-bottom: 6rem;
+    }
+
+    }
